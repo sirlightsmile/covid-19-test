@@ -16,7 +16,8 @@ const config = {
     inline: false,
     host: "localhost",
     port: 8080,
-    contentBase: "public"
+    contentBase: "public",
+    historyApiFallback: true
   },
 
   plugins: [
