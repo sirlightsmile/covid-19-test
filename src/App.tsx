@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.scss';
+import FlagContainer from './components/FlagContainer';
 import * as mockData from './data.json';
 import { CountryData } from './models/Country';
 
@@ -30,6 +31,7 @@ function App() {
       </header>
       <main>
         <h2>Select country to show data</h2>
+        <FlagContainer countryDataList={selectedCountry} />
       </main>
     </div>
   );
