@@ -1,8 +1,8 @@
-import { CountryData, isCountryData } from '../models/country_model';
+import { ICountryData, isCountryData } from '../models/country_model';
 import { ContentType, HttpMethod } from './base_http_request';
 import { GenericHTTPRequest } from './generic_http_request';
 
-export class GetAllCountryRequest extends GenericHTTPRequest<CountryData[]> {
+export class GetAllCountryRequest extends GenericHTTPRequest<ICountryData[]> {
   constructor() {
     const config = {
       method: HttpMethod.GET,
@@ -13,8 +13,8 @@ export class GetAllCountryRequest extends GenericHTTPRequest<CountryData[]> {
   }
 }
 
-export function isGetAllCountryRequest(obj: unknown): obj is CountryData[] {
-  const result = obj as CountryData[];
+export function isGetAllCountryRequest(obj: unknown): obj is ICountryData[] {
+  const result = obj as ICountryData[];
 
   const isArray = Array.isArray(result);
   if (isArray && result.length > 0) {

@@ -39,7 +39,7 @@ export function isCountryData(obj: unknown): obj is ICountryData {
   );
 }
 
-export class CurrencyData {
+export class CountryData {
   readonly name: string;
   readonly flag: string;
   readonly alpha3Code: string;
