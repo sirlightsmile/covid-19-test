@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.scss';
-import FlagContainer from './components/FlagContainer';
+import FlagContainer from './components/flag_container';
 import * as mockData from './data.json';
-import { CountryData } from './models/Country';
+import { CountryData } from './models/country_model';
 
 const SELECTED_COUNTRY_NUMBER = 29;
 const SELECTED_COUNTRY_POPULATION = 300000;

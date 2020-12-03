@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import CountryPage from './CountryPage';
+import CountryPage from './country_page';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Routes } from './Route';
 

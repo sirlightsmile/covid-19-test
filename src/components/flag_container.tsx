@@ -1,6 +1,6 @@
 import React from 'react';
-import { CountryData } from '../models/Country';
-import CountryFlag from './CountryFlag';
+import { CountryData } from '../models/country_model';
+import CountryFlag from './country_flag';
 
 export interface FlagContainerProps {
   countryDataList: CountryData[];
