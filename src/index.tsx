@@ -1,11 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.scss';
 import App from './App';
+import CountryPage from './CountryPage';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Routes } from './Route';
+
+import './index.scss';
+import { GetRoute } from './helper';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Switch>
+        <Route exact path={Routes.Main} component={App} />
+        <Route path={GetRoute(Routes.CountryData, 'name')} component={CountryPage} />
+      </Switch>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
