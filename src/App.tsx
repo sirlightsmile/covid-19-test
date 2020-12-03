@@ -1,20 +1,29 @@
 import React from 'react';
-import './App.scss';
 import FlagContainer from './components/flag_container';
-import * as mockData from './data.json';
 import { CountryData } from './models/country_model';
+import { selector, useRecoilValue } from 'recoil';
+import { GetAllCountryRequest } from './requests/get_all_country_request';
+import './App.scss';
 
 const SELECTED_COUNTRY_NUMBER = 29;
 const SELECTED_COUNTRY_POPULATION = 300000;
 
-function App() {
-  //TODO: change to request
-  const data = JSON.stringify(mockData);
+export const countryState = selector<CountryData[]>({
+  key: 'countryState',
+  get: async () => {
+    try {
+      return new GetAllCountryRequest().start();
+    } catch (e) {
+      throw e;
+    }
+  },
+});
 
-  const countryData: CountryData[] = Array.from(JSON.parse(data));
+function App() {
+  const countriesData = useRecoilValue(countryState);
   let selectedCountry: CountryData[] = [];
 
-  for (const data of countryData) {
+  for (const data of countriesData) {
     if (data.population >= SELECTED_COUNTRY_POPULATION) {
       selectedCountry.push(data);
     }
