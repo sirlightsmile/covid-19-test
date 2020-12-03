@@ -14,14 +14,14 @@ ReactDOM.render(
   <React.StrictMode>
     <ErrorBoundary>
       <Suspense fallback={<div>Loading...</div>}>
-        <BrowserRouter>
-          <RecoilRoot>
+        <RecoilRoot>
+          <BrowserRouter>
             <Switch>
               <Route exact path={Routes.Main} component={App} />
               <Route path={GetRoute(Routes.CountryData, 'name')} component={CountryPage} />
             </Switch>
-          </RecoilRoot>
-        </BrowserRouter>
+          </BrowserRouter>
+        </RecoilRoot>
       </Suspense>
     </ErrorBoundary>
   </React.StrictMode>,
