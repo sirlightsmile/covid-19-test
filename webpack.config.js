@@ -21,7 +21,7 @@ const config = {
 
   plugins: [
     new webpack.DefinePlugin({
-    REST_URL : JSON.stringify('https://base-rest-url.com/'),
+    API_URL : JSON.stringify('https://restcountries.eu/rest/v2/'),
   }),
   new MiniCssExtractPlugin()],
 
