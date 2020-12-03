@@ -1,21 +1,22 @@
 import { selector } from 'recoil';
-import { CountryData } from '../models/country_model';
+import { CurrencyData, ICountryData } from '../models/country_model';
 import { GetAllCountryRequest } from '../requests/get_all_country_request';
+import * as _ from 'lodash';
 
 const SELECTED_COUNTRY_NUMBER = 29;
 const SELECTED_COUNTRY_POPULATION = 300000;
 
-export const countryState = selector<Record<string, CountryData>>({
+export const countryState = selector<Map<string, CurrencyData>>({
   key: 'countryState',
   get: async () => {
     try {
       const countriesData = await new GetAllCountryRequest().start();
-      const selectedCountry: Record<string, CountryData> = {};
+      const selectedCountry = new Map<string, CurrencyData>();
 
       let count = 0;
       for (const data of countriesData) {
         if (data.population >= SELECTED_COUNTRY_POPULATION) {
-          selectedCountry[data.name] = data;
+          selectedCountry.set(data.name, new CurrencyData(data));
           count++;
         }
 

@@ -8,25 +8,25 @@
 //TODO:
 // - จำนวนการติดเชื้อในเดือน มกราคม-พฤษภาคม (รบกวนทำเป็นตาราง)
 
-export interface CountryData {
+export interface ICountryData {
   name: string;
   flag: string;
   alpha3Code: string;
   region: string;
-  currencies: CurrencyData[];
+  currencies: ICurrencyData[];
   timezones: string[];
   population: number;
 }
 
-export interface CurrencyData {
+export interface ICurrencyData {
   code: string;
   name: string;
   symbol: string;
 }
 
 //type guard
-export function isCountryData(obj: unknown): obj is CountryData {
-  const data = obj as CountryData;
+export function isCountryData(obj: unknown): obj is ICountryData {
+  const data = obj as ICountryData;
   return (
     data !== undefined &&
     data.name !== undefined &&
@@ -37,4 +37,24 @@ export function isCountryData(obj: unknown): obj is CountryData {
     Array.isArray(data.timezones) &&
     data.population !== undefined
   );
+}
+
+export class CurrencyData {
+  readonly name: string;
+  readonly flag: string;
+  readonly alpha3Code: string;
+  readonly region: string;
+  readonly currencies: ICurrencyData[];
+  readonly timezones: string[];
+  readonly population: number;
+
+  constructor(params: ICountryData) {
+    this.name = params.name;
+    this.flag = params.flag;
+    this.alpha3Code = params.alpha3Code;
+    this.region = params.region;
+    this.currencies = params.currencies;
+    this.timezones = params.timezones;
+    this.population = params.population;
+  }
 }

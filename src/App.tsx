@@ -6,7 +6,6 @@ import './App.scss';
 
 function App() {
   const countriesMap = useRecoilValue(countryState);
-  const countriesData = Object.values(countriesMap);
 
   return (
     <div className="App">
@@ -15,7 +14,7 @@ function App() {
       </header>
       <main>
         <h2>Select country to show data</h2>
-        <FlagContainer countryDataList={countriesData} />
+        <FlagContainer countryDataList={Array.from(countriesMap.values())} />
       </main>
     </div>
   );
