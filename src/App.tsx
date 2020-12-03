@@ -1,23 +1,12 @@
 import React from 'react';
 import FlagContainer from './components/flag_container';
 import { CountryData } from './models/country_model';
-import { selector, useRecoilValue } from 'recoil';
-import { GetAllCountryRequest } from './requests/get_all_country_request';
+import { useRecoilValue } from 'recoil';
+import { countryState } from './recoil/country_recoils';
 import './App.scss';
 
 const SELECTED_COUNTRY_NUMBER = 29;
 const SELECTED_COUNTRY_POPULATION = 300000;
-
-export const countryState = selector<CountryData[]>({
-  key: 'countryState',
-  get: async () => {
-    try {
-      return new GetAllCountryRequest().start();
-    } catch (e) {
-      throw e;
-    }
-  },
-});
 
 function App() {
   const countriesData = useRecoilValue(countryState);
