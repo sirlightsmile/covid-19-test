@@ -37,7 +37,7 @@ export class CountryData {
   readonly alpha2Code: string;
   readonly alpha3Code: string;
   readonly region: string;
-  readonly currencies: ICurrencyData[];
+  readonly currencies: string[];
   readonly timezones: string[];
   readonly population: number;
 
@@ -47,7 +47,7 @@ export class CountryData {
     this.alpha2Code = params.alpha2Code;
     this.alpha3Code = params.alpha3Code;
     this.region = params.region;
-    this.currencies = params.currencies;
+    this.currencies = params.currencies.map((o) => o.name);
     this.timezones = params.timezones;
     this.population = params.population;
   }
