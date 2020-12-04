@@ -47,11 +47,15 @@ const config = {
         loader: "file-loader",
       },
       {
-        test: /\.scss$/,
+        test: /\.s(a|c)ss$/,
         use: [
-          { loader: "css-loader", options: { modules: true } },  // to convert the resulting CSS to Javascript to be bundled (modules:true to rename CSS classes in output to cryptic identifiers, except if wrapped in a :global(...) pseudo class)
-          { loader: "sass-loader" },  // to convert SASS to CSS
-        ],
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: { modules: true }
+          },
+          'sass-loader'
+        ]
       }
     ],
   },
