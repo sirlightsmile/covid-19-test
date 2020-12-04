@@ -48,7 +48,7 @@ export const covidState = selectorFamily({
           const date = new Date(o.Date);
           const month = date.getMonth();
           const current = caseMap.get(month) ?? 0;
-          caseMap.set(month, current);
+          caseMap.set(month, current + o.Cases);
         });
 
         covidData = new CovidData(res[0].Country, caseMap);
