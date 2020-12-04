@@ -1,4 +1,4 @@
-import { Routes } from './Route';
+import { Routes } from './enum/route';
 
 /**
  * Get link with params

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, Route } from 'react-router-dom';
 import { GetLink } from '../helper';
-import { Routes } from '../Route';
+import { Routes } from '../enum/route';
 
 export interface CountryFlagProps {
   name: string;

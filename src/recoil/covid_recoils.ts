@@ -1,7 +1,7 @@
 import { selector, selectorFamily } from 'recoil';
 import { CovidData } from '../models/covid_data_model';
 import { GetCovidStatusRequests } from '../requests/get_covid_status_request';
-import { MonthList } from '../config/month';
+import { MonthList } from '../enum/month';
 import { GetCovidCountryRequest } from '../requests/get_covid_country_request';
 
 const FROM_DATE = '2020-01-01T00:00:00Z';

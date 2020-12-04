@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import CountryPage from './country_page';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { Routes } from './Route';
+import { Routes } from './enum/route';
 
 import './index.scss';
 import { GetRoute } from './helper';

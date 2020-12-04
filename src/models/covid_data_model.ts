@@ -1,7 +1,7 @@
 //TODO:
 // - จำนวนการติดเชื้อในเดือน มกราคม-พฤษภาคม (รบกวนทำเป็นตาราง)
 
-import { MonthList } from '../config/month';
+import { MonthList } from '../enum/month';
 
 export interface ICovidData {
   Country: string;

@@ -1,5 +1,5 @@
 import { useRecoilValue } from 'recoil';
-import { MonthList } from '../config/month';
+import { MonthList } from '../enum/month';
 import { covidState } from '../recoil/covid_recoils';
 
 export interface CovidTableProps {
