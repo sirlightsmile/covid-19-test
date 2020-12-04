@@ -4,7 +4,7 @@ import { COVID_API_URL } from '../config/config';
 import { ICovidData, isCovidData } from '../models/covid_data_model';
 
 export interface Params {
-  countryName: string;
+  countrySlug: string;
   from: string;
   to: string;
 }
@@ -18,17 +18,17 @@ export class GetCovidStatusRequests extends GenericHTTPRequest<ICovidData[]> {
       method: HttpMethod.GET,
       contentType: ContentType.JSON,
       baseURL: COVID_API_URL,
-      url: `/country/${params.countryName}/`,
+      url: `/country/${params.countrySlug}/`,
       params: {
         from: params.from,
         to: params.to,
       },
     };
-    super(config, isGetAllCountryRequest);
+    super(config, isGetCovidStatusRequests);
   }
 }
 
-export function isGetAllCountryRequest(obj: unknown): obj is ICovidData[] {
+export function isGetCovidStatusRequests(obj: unknown): obj is ICovidData[] {
   const result = obj as ICovidData[];
 
   const isArray = Array.isArray(result);
