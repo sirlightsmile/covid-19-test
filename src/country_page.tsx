@@ -21,18 +21,17 @@ function CountryPage(props: CountryPageProps) {
     throw Error('Country data not found.');
   }
 
-  const { name, alpha3Code, region, currencies, timezones, population } = countryData;
+  const { name, alpha3Code, region, currencies, timezones, population, flag } = countryData;
 
   return (
     <div>
       <header>
-        <h1>
-          บริษัท การีนา ออนไลน์ (ประเทศไทย) จำกัด 89 อาคารเอไอเอ แคปปิตอล เซ็นเตอร์ ชั้น 24 ถนนรัชดาภิเษก แขวงดินแดง
-          เขตดินแดง กทม. 10400
-        </h1>
+        <h1>บริษัท การีนา ออนไลน์ (ประเทศไทย) จำกัด</h1>
+        <h2>89 อาคารเอไอเอ แคปปิตอล เซ็นเตอร์ ชั้น 24 ถนนรัชดาภิเษก แขวงดินแดง เขตดินแดง กทม. 10400</h2>
       </header>
       <main>
-        <h2>{`${name} (${alpha3Code})`}</h2>
+        <h3>{`${name} (${alpha3Code})`}</h3>
+        <img src={flag} width={200 + 'px'} height={200 + 'px'} alt="country flag"></img>
         <p>region : {region}</p>
         <p>currencies : {currencies.join(Separator)}</p>
         <p>timezones : {timezones.join(Separator)}</p>
