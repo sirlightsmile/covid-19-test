@@ -1,6 +1,8 @@
 //TODO:
 // - จำนวนการติดเชื้อในเดือน มกราคม-พฤษภาคม (รบกวนทำเป็นตาราง)
 
+import { MonthList } from '../config/month';
+
 export interface ICovidData {
   Country: string;
   CountryCode: string;
@@ -27,9 +29,9 @@ export function isCovidData(obj: unknown): obj is ICovidData {
 
 export class CovidData {
   readonly country: string;
-  readonly cases: Map<number, number>;
+  readonly cases: Map<MonthList, number>;
 
-  constructor(country: string, caseMap: Map<number, number>) {
+  constructor(country: string, caseMap: Map<MonthList, number>) {
     this.country = country;
     this.cases = caseMap;
   }
