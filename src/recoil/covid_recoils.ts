@@ -1,5 +1,4 @@
 import { selector, selectorFamily } from 'recoil';
-import * as _ from 'lodash';
 import { CovidData } from '../models/covid_data_model';
 import { GetCovidStatusRequests } from '../requests/get_covid_status_request';
 import { MonthList } from '../config/month';

@@ -1,7 +1,6 @@
 import { selector } from 'recoil';
 import { CountryData } from '../models/country_model';
 import { GetAllCountryRequest } from '../requests/get_all_country_request';
-import * as _ from 'lodash';
 
 const SELECTED_COUNTRY_NUMBER = 29;
 const SELECTED_COUNTRY_POPULATION = 300000;
