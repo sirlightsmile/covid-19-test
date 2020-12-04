@@ -8,6 +8,7 @@ type CountryRequiredField = keyof ICountryData;
 const requiredField: CountryRequiredField[] = [
   'name',
   'flag',
+  'alpha2Code',
   'alpha3Code',
   'region',
   'currencies',
