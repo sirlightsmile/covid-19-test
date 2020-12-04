@@ -1,6 +1,5 @@
 const webpack = require('webpack');
 const path = require("path");
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const config = {
   entry: "./src/index.tsx",
@@ -14,6 +13,7 @@ const config = {
 
   devServer: {
     inline: false,
+    hot: true,
     host: "localhost",
     port: 8080,
     contentBase: "public",
@@ -24,8 +24,7 @@ const config = {
     new webpack.DefinePlugin({
     COUNTRY_API_URL : JSON.stringify('https://restcountries.eu/rest/v2/'),
     COVID_API_URL: JSON.stringify('https://api.covid19api.com/')
-  }),
-  new MiniCssExtractPlugin()],
+  })],
 
   module: {
     rules: [
@@ -52,9 +51,18 @@ const config = {
           'style-loader',
           {
             loader: 'css-loader',
-            options: { modules: true }
+            options: {
+              modules: false,
+              sourceMap: false,
+              url: false,
+            },
           },
-          'sass-loader'
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: false,
+            },
+          },
         ]
       }
     ],
