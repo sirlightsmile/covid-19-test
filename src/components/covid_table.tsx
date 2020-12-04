@@ -13,10 +13,19 @@ function CovidTable(props: CovidTableProps) {
 
   return cases ? (
     <div>
-      <h2>TABLE</h2>
-      {Array.from(cases.entries()).map(([month, value]) => {
-        return <p key={month.toString()}>{`${MonthList[month]} : ${value}`}</p>;
-      })}
+      <h3>COVID-19 Table by month</h3>
+      <table>
+        <tr>
+          {Array.from(cases.keys()).map((key) => (
+            <th key={'key' + key}>{MonthList[key]}</th>
+          ))}
+        </tr>
+        <tr>
+          {Array.from(cases.values()).map((value) => (
+            <td key={'value' + value}>{value}</td>
+          ))}
+        </tr>
+      </table>
     </div>
   ) : null;
 }
