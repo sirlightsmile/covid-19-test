@@ -3,6 +3,17 @@ import { BaseAPIConfig, ContentType, HttpMethod } from './base_http_request';
 import { GenericHTTPRequest } from './generic_http_request';
 import { COUNTRY_API_URL } from '../config/config';
 
+type CountryRequiredField = keyof ICountryData;
+const requiredField: CountryRequiredField[] = [
+  'name',
+  'flag',
+  'alpha3Code',
+  'region',
+  'currencies',
+  'timezones',
+  'population',
+];
+
 export class GetAllCountryRequest extends GenericHTTPRequest<ICountryData[]> {
   constructor() {
     const config: BaseAPIConfig = {
@@ -10,6 +21,9 @@ export class GetAllCountryRequest extends GenericHTTPRequest<ICountryData[]> {
       contentType: ContentType.JSON,
       baseURL: COUNTRY_API_URL,
       url: '/all',
+      params: {
+        fields: requiredField.join(';'),
+      },
     };
     super(config, isGetAllCountryRequest);
   }
