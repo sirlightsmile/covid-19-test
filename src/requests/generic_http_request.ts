@@ -1,5 +1,4 @@
 import { AxiosError } from 'axios';
-import { API_URL } from '../config/config';
 import { BaseAPIConfig, BaseHttpRequest } from './base_http_request';
 
 export type ConvertFunction<T> = (jsonObj: any) => jsonObj is T;
@@ -8,7 +7,6 @@ export class GenericHTTPRequest<T> extends BaseHttpRequest<T> {
   convertFunc: ConvertFunction<T>;
 
   constructor(config: BaseAPIConfig, convertFunc: ConvertFunction<T>) {
-    config.baseURL = API_URL;
     super(config);
     this.convertFunc = convertFunc;
   }

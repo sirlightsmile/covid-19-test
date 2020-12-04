@@ -1,5 +1,7 @@
-declare const API_URL: string;
+declare const COUNTRY_API_URL: string;
+declare const COVID_API_URL: string;
 
-const _API_URL = API_URL;
+const _COUNTRY_API_URL = COUNTRY_API_URL;
+const _COVID_API_URL = COVID_API_URL;
 
-export { _API_URL as API_URL };
+export { _COUNTRY_API_URL as COUNTRY_API_URL, _COVID_API_URL as COVID_API_URL };

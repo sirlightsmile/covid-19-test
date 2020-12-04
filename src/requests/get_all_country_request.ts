@@ -1,12 +1,14 @@
 import { ICountryData, isCountryData } from '../models/country_model';
-import { ContentType, HttpMethod } from './base_http_request';
+import { BaseAPIConfig, ContentType, HttpMethod } from './base_http_request';
 import { GenericHTTPRequest } from './generic_http_request';
+import { COUNTRY_API_URL } from '../config/config';
 
 export class GetAllCountryRequest extends GenericHTTPRequest<ICountryData[]> {
   constructor() {
-    const config = {
+    const config: BaseAPIConfig = {
       method: HttpMethod.GET,
       contentType: ContentType.JSON,
+      baseURL: COUNTRY_API_URL,
       url: '/all',
     };
     super(config, isGetAllCountryRequest);

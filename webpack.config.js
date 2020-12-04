@@ -22,7 +22,8 @@ const config = {
 
   plugins: [
     new webpack.DefinePlugin({
-    API_URL : JSON.stringify('https://restcountries.eu/rest/v2/'),
+    COUNTRY_API_URL : JSON.stringify('https://restcountries.eu/rest/v2/'),
+    COVID_API_URL: JSON.stringify('https://api.covid19api.com/')
   }),
   new MiniCssExtractPlugin()],
 
