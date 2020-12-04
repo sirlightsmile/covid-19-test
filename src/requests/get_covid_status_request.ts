@@ -18,7 +18,7 @@ export class GetCovidStatusRequests extends GenericHTTPRequest<ICovidData[]> {
       method: HttpMethod.GET,
       contentType: ContentType.JSON,
       baseURL: COVID_API_URL,
-      url: `/country/${params.countrySlug}/`,
+      url: `/country/${params.countrySlug}/status/confirmed`,
       params: {
         from: params.from,
         to: params.to,
