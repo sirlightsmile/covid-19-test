@@ -8,6 +8,8 @@ export interface MatchParams {
   name: string;
 }
 
+const Separator = ', ';
+
 interface CountryPageProps extends RouteComponentProps<MatchParams> {}
 
 function CountryPage(props: CountryPageProps) {
@@ -15,25 +17,31 @@ function CountryPage(props: CountryPageProps) {
   const countryName = props.match.params.name;
   const countryData = countriesMap.get(countryName);
 
-  return countryData ? (
+  if (!countryData) {
+    throw Error('Country data not found.');
+  }
+
+  const { name, alpha3Code, region, currencies, timezones, population } = countryData;
+
+  return (
     <div>
       <header>
-        บริษัท การีนา ออนไลน์ (ประเทศไทย) จำกัด 89 อาคารเอไอเอ แคปปิตอล เซ็นเตอร์ ชั้น 24 ถนนรัชดาภิเษก แขวงดินแดง
-        เขตดินแดง กทม. 10400
+        <h1>
+          บริษัท การีนา ออนไลน์ (ประเทศไทย) จำกัด 89 อาคารเอไอเอ แคปปิตอล เซ็นเตอร์ ชั้น 24 ถนนรัชดาภิเษก แขวงดินแดง
+          เขตดินแดง กทม. 10400
+        </h1>
       </header>
       <main>
-        <h1>Country Data of {countryData.name}</h1>
-        {Object.entries(countryData).map(([keys, value]) => (
-          <p key={keys}>
-            {keys} : {value.toString()}
-          </p>
-        ))}
+        <h2>{`${name} (${alpha3Code})`}</h2>
+        <p>region : {region}</p>
+        <p>currencies : {currencies.join(Separator)}</p>
+        <p>timezones : {timezones.join(Separator)}</p>
+        <p>population : {population}</p>
         <CovidTable countryISO2={countryData.alpha2Code} />
       </main>
+      <br />
       <footer>ข้อมูลด้านบนเป็นข้อมูลปัจจุบันจาก xxx</footer>
     </div>
-  ) : (
-    <div>No data.</div>
   );
 }
 
