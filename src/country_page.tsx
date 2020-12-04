@@ -16,12 +16,19 @@ function CountryPage(props: CountryPageProps) {
 
   return countryData ? (
     <div>
-      <h1>Country Data of {countryData.name}</h1>
-      {Object.entries(countryData).map(([keys, value]) => (
-        <p>
-          {keys} : {value.toString()}
-        </p>
-      ))}
+      <header>
+        บริษัท การีนา ออนไลน์ (ประเทศไทย) จำกัด 89 อาคารเอไอเอ แคปปิตอล เซ็นเตอร์ ชั้น 24 ถนนรัชดาภิเษก แขวงดินแดง
+        เขตดินแดง กทม. 10400
+      </header>
+      <main>
+        <h1>Country Data of {countryData.name}</h1>
+        {Object.entries(countryData).map(([keys, value]) => (
+          <p>
+            {keys} : {value.toString()}
+          </p>
+        ))}
+      </main>
+      <footer>ข้อมูลด้านบนเป็นข้อมูลปัจจุบันจาก xxx</footer>
     </div>
   ) : (
     <div>No data.</div>
