@@ -5,8 +5,8 @@ import { ICovidData, isCovidData } from '../models/covid_data_model';
 
 export interface Params {
   countryName: string;
-  from: Date;
-  to: Date;
+  from: string;
+  to: string;
 }
 
 /**
@@ -20,8 +20,8 @@ export class GetCovidStatusRequests extends GenericHTTPRequest<ICovidData[]> {
       baseURL: COVID_API_URL,
       url: `/country/${params.countryName}/`,
       params: {
-        from: params.from.toDateString(),
-        to: params.to.toDateString(),
+        from: params.from,
+        to: params.to,
       },
     };
     super(config, isGetAllCountryRequest);

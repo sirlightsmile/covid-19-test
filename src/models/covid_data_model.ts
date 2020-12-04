@@ -27,12 +27,10 @@ export function isCovidData(obj: unknown): obj is ICovidData {
 
 export class CovidData {
   readonly country: string;
-  readonly cases: number;
-  readonly date: Date;
+  readonly cases: Map<number, number>;
 
-  constructor(data: ICovidData) {
-    this.country = data.Country;
-    this.cases = data.Cases;
-    this.date = data.Date;
+  constructor(country: string, caseMap: Map<number, number>) {
+    this.country = country;
+    this.cases = caseMap;
   }
 }
