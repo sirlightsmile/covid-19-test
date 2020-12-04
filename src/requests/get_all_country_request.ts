@@ -4,6 +4,7 @@ import { GenericHTTPRequest } from './generic_http_request';
 import { COUNTRY_API_URL } from '../config/config';
 
 type CountryRequiredField = keyof ICountryData;
+
 const requiredField: CountryRequiredField[] = [
   'name',
   'flag',
@@ -14,6 +15,8 @@ const requiredField: CountryRequiredField[] = [
   'population',
 ];
 
+const fieldSeparator = ';';
+
 export class GetAllCountryRequest extends GenericHTTPRequest<ICountryData[]> {
   constructor() {
     const config: BaseAPIConfig = {
@@ -22,7 +25,7 @@ export class GetAllCountryRequest extends GenericHTTPRequest<ICountryData[]> {
       baseURL: COUNTRY_API_URL,
       url: '/all',
       params: {
-        fields: requiredField.join(';'),
+        fields: requiredField.join(fieldSeparator),
       },
     };
     super(config, isGetAllCountryRequest);
