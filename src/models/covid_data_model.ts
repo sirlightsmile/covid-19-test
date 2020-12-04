@@ -10,7 +10,7 @@ export interface ICovidData {
   Lon: string;
   Cases: number;
   Status: string;
-  Date: Date;
+  Date: string;
 }
 
 export function isCovidData(obj: unknown): obj is ICovidData {
@@ -22,8 +22,7 @@ export function isCovidData(obj: unknown): obj is ICovidData {
     data.Lon !== undefined &&
     Number.isFinite(data.Cases) &&
     data.Status !== undefined &&
-    data.Date !== undefined &&
-    data.Date instanceof Date
+    data.Date !== undefined
   );
 }
 
