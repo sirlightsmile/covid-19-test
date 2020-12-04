@@ -1,13 +1,3 @@
-// - ชื่อประเทศ (name)
-// - รูปธง
-// - อักษรย่อ (alpha3Code)
-// - ภูมิภาค (region)
-// - สกุลเงิน (currencies name)
-// - โซนเวลา (timezones)
-
-//TODO:
-// - จำนวนการติดเชื้อในเดือน มกราคม-พฤษภาคม (รบกวนทำเป็นตาราง)
-
 export interface ICountryData {
   name: string;
   flag: string;
