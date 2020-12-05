@@ -45,7 +45,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "scripts": {
-    "dev": "start http://localhost:8080/ & webpack-dev-server"
+    "dev": "start http://localhost:3000/ & webpack-dev-server"
   },
   "eslintConfig": {
     "extends": [

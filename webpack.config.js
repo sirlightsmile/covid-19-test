@@ -15,7 +15,7 @@ const config = {
     inline: false,
     hot: true,
     host: "localhost",
-    port: 8080,
+    port: 3000,
     contentBase: "public",
     historyApiFallback: true
   },
