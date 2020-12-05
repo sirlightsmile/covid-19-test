@@ -6,7 +6,8 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    min-height: 100vh;
+    height: 100%;
+    margin-bottom: 5%;
 
     &__bg{
         background-color: black;
