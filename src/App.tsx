@@ -2,18 +2,21 @@ import React from 'react';
 import FlagContainer from './components/flag_container';
 import { useRecoilValue } from 'recoil';
 import { countryState } from './recoil/country_recoils';
-import './App.scss';
+import bem from 'bem-ts';
+
+const b = bem('App');
 
 function App() {
   const countriesMap = useRecoilValue(countryState);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Country covid-19 data</h1>
+    <div className={b()}>
+      <header className={b('header')}>
+        <div className={b('heroText')}>
+          <h1>Country COVID-19 Data</h1>
+        </div>
       </header>
       <main>
-        <h2>Select country to show data</h2>
         <FlagContainer countryDataList={Array.from(countriesMap.values())} />
       </main>
     </div>

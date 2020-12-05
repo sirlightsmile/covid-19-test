@@ -1,0 +1,78 @@
+@mixin google-font($family) {
+  @import url("http://fonts.googleapis.com/css?family=#{$family}");
+}
+
+// @include google-font("Droid Sans");
+
+@mixin nineslice($imageUrl, $top, $right, $bottom, $left) {
+    border-image-source: url($imageUrl);
+    border-image-slice: $top $right $bottom $left fill;
+    border-image-repeat: stretch; //should be fill but with current assets. stretch looks more reasonable
+    border-image-width: toPx($top) toPx($right) toPx($bottom) toPx($left);
+
+    border-style: solid; // Edge fix
+  }
+
+  @function toPx($val) {
+    @return $val + 0px;
+  }
+
+  @function fromPxToRefWidth($width) {
+    @return ($width / 1000) * 100vw;
+  }
+
+  @function fromPxToRefHeight($height) {
+    @return ($height / 800) * 100vw;
+  }
+
+//responsive mixin from https://gist.github.com/davidthingsaker/30be328580d2a01f8a06
+$small-desktop: 960px;
+$large-desktop: 1200px;
+$handheld: 768px;
+$handhelds-landscape: 1024px;
+$mobile: 640px;
+$mobile-landscape: 480px;
+
+@mixin respond-to($media) {
+  @if $media == largeDesktop {
+    @media only screen and (min-width: $large-desktop) { @content }
+  }
+  @if $media == smallDesktop {
+    @media only screen and (max-width: $small-desktop) { @content; }
+  }
+  @if $media == handhelds {
+    @media only screen and (max-width: $handheld) { @content; }
+  }
+  @if $media == handhelds-landscape {
+    @media only screen  and (min-device-width : $handheld)
+                        and (max-device-width : $handhelds-landscape)
+                        and (orientation : landscape){ @content; }
+  }
+  @if $media == mobile {
+    @media only screen and (max-width: $mobile) { @content; }
+  }
+  @if $media == mobile-portrait {
+    @media only screen  and (max-width: $mobile)
+                        and (orientation : portrait) { @content; }
+  }
+  @if $media == mobile-landscape {
+    @media only screen  and (min-width: 320px)
+                        and (max-width: $mobile-landscape)
+                        and (orientation : landscape) { @content; }
+  }
+
+  @if $media == retina {
+    @media (-webkit-min-device-pixel-ratio: 2) { @content; }
+  }
+
+  @if $media == iphone5 {
+    @media only screen and (device-aspect-ratio: 40/71) { @content }
+  }
+}
+
+// /* To be used like this */
+// body {
+//   @include respond-to(handhelds){
+//     // css code here
+//   }
+// }

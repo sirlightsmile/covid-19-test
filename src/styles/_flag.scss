@@ -1,0 +1,70 @@
+@import 'mixin';
+@import 'variables';
+
+.Flag {
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-height: 1200px;
+
+    &__bg{
+        background-color: black;
+        @include nineslice($baseImageUrl+"frame_large.png", 300, 430, 440, 500);
+        max-width: 900px;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    &__header{
+        position: absolute;
+        margin-top: 25px;
+
+        @include respond-to(mobile){
+            margin-top: 0px;
+        }
+    }
+
+    &__container {
+        max-height: 1100px;
+        overflow-y: scroll;
+        width: 90%;
+        margin-top: 10%;
+        margin-bottom: 50px;
+        padding: 0 30px 30px 30px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    &__imgContainer{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 0 1 30%;
+        text-align: center;
+
+        @include respond-to(mobile){
+            flex: 0 1 45%;
+        }
+
+
+        img{
+            background-color: wheat;
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        p{
+            font-size: larger;
+            color: white;
+        }
+    }
+}

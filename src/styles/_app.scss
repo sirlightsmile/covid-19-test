@@ -1,0 +1,87 @@
+@import 'mixin';
+@import 'variables';
+
+.App {
+  background-color: black;
+  color: transparent;
+  width: 100vw;
+  height: 100%;
+
+  &__header {
+    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.3)), url($baseImageUrl +"BG.png");
+
+    width: 100%;
+    height: 40vmax;
+    min-height: 200px;
+
+    @include respond-to(mobile){
+      height: fromPxToRefWidth(200);
+    }
+
+    /* Position and center the image to scale nicely on all screens */
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &__heroText {
+    position: relative;
+    background-color: transparent;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%,-50%);
+    color: white;
+    left: 50%;
+    top: 50%;
+
+    font-size: calc(10px + 5vw);
+    font-weight: bold;
+    overflow: hidden;
+
+    @include respond-to(mobile){
+      font-size: calc(10px + 3vw);
+    }
+
+  }
+}
+
+
+
+// .App {
+//   text-align: center;
+// }
+
+// .App-logo {
+//   height: 40vmin;
+//   pointer-events: none;
+// }
+
+// @media (prefers-reduced-motion: no-preference) {
+//   .App-logo {
+//     animation: App-logo-spin infinite 20s linear;
+//   }
+// }
+
+// .App-header {
+//   background-color: #282c34;
+//   min-height: 100vh;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   font-size: calc(10px + 2vmin);
+//   color: white;
+// }
+
+// .App-link {
+//   color: #61dafb;
+// }
+
+// @keyframes App-logo-spin {
+//   from {
+//     transform: rotate(0deg);
+//   }
+//   to {
+//     transform: rotate(360deg);
+//   }
+// }
