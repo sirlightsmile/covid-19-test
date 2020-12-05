@@ -31,6 +31,7 @@ $large-desktop: 1200px;
 $handheld: 768px;
 $handhelds-landscape: 1024px;
 $mobile: 640px;
+$small-mobile: 480px;
 $mobile-landscape: 480px;
 
 @mixin respond-to($media) {
@@ -50,6 +51,9 @@ $mobile-landscape: 480px;
   }
   @if $media == mobile {
     @media only screen and (max-width: $mobile) { @content; }
+  }
+  @if $media == small-mobile {
+    @media only screen and (max-width: $small-mobile) { @content; }
   }
   @if $media == mobile-portrait {
     @media only screen  and (max-width: $mobile)

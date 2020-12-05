@@ -50,12 +50,14 @@
         text-align: center;
 
         @include respond-to(mobile){
-            min-width: 200px;
+            width: 300px;
+            min-width: 100px;
             flex: 0 1 45%;
         }
 
-        @include respond-to($mobile-landscape){
-            min-width: 300px;
+        @include respond-to(small-mobile){
+            width: calc(300px + 5vw);
+            min-width: 100px;
             flex: 0 1 80%;
         }
 
@@ -67,7 +69,7 @@
             max-height: 150px;
 
             @include respond-to(mobile){
-                max-height: 300px;
+                max-height: 500px;
             }
         }
 
