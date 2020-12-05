@@ -69,10 +69,3 @@ $mobile-landscape: 480px;
     @media only screen and (device-aspect-ratio: 40/71) { @content }
   }
 }
-
-// /* To be used like this */
-// body {
-//   @include respond-to(handhelds){
-//     // css code here
-//   }
-// }
