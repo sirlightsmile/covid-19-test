@@ -17,7 +17,7 @@ function FlagContainer(props: FlagContainerProps) {
     <div className={b('container')}>
       {countryList.map((o) => {
         return (
-          <div className={b('imgContainer')}>
+          <div key={o.alpha2Code} className={b('imgContainer')}>
             <Link to={GetLink(Routes.CountryData, o.name)} target="_blank">
               <img src={o.flag} alt="country flag"></img>
               <p>{o.name}</p>
