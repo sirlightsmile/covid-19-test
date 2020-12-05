@@ -16,7 +16,7 @@ function App() {
       <Header>
         <h1>Country COVID-19 Data</h1>
       </Header>
-      <ContentLayout>
+      <ContentLayout title="Select Country">
         <FlagContainer countryDataList={Array.from(countriesMap.values())} />
       </ContentLayout>
     </div>
