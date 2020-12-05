@@ -23,7 +23,7 @@ function CovidTable(props: CovidTableProps) {
           </tr>
           <tr>
             {Array.from(cases.values()).map((value, i) => (
-              <td key={'value' + i}>{value}</td>
+              <td key={'value' + i}>{value.toLocaleString()}</td>
             ))}
           </tr>
         </tbody>

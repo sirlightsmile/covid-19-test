@@ -53,7 +53,7 @@ function CountryPage(props: CountryPageProps) {
               <strong>Time Zones</strong> : {timezones.join(Separator)}
             </p>
             <p>
-              <strong>Population</strong> : {population}
+              <strong>Population</strong> : {population.toLocaleString()}
             </p>
           </div>
           <CovidTable countryISO2={countryData.alpha2Code} />
