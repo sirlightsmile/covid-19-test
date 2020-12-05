@@ -27,6 +27,7 @@
     font-size: calc(10px + 5vw);
     font-weight: bold;
     overflow: hidden;
+    padding: 5%;
 
     @include respond-to(mobile){
       font-size: calc(10px + 3vw);
