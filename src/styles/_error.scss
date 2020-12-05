@@ -1,0 +1,39 @@
+.Error{
+    border-radius: 8px;
+    width: 80vw;
+    padding: 10%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    header {
+        color: rgb(73, 73, 73);
+
+        h1 {
+            position: relative;
+            font-size: calc(16px + 5vw);
+            color: black
+        }
+
+        h2 {
+            font-size: calc(16px + 1.5vw);
+
+        }
+
+        p{
+            font-size: calc(16px + 0.5vw);
+            font-weight: normal;
+        }
+
+        flex-shrink: 0;
+    }
+
+    &__info{
+        display: flex;
+        height: auto;
+        flex-direction: column;
+        justify-content: center;
+        flex-grow: 1;
+    }
+}

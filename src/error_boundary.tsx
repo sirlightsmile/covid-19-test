@@ -1,4 +1,7 @@
+import bem from 'bem-ts';
 import React, { Component } from 'react';
+
+const b = bem('Error');
 
 interface State {
   hasError: boolean;
@@ -18,13 +21,14 @@ export class ErrorBoundary extends Component<{}, State> {
   render() {
     if (this.state.hasError) {
       return (
-        <div>
+        <div className={b()}>
           <header>
-            <h1 className="alert-heading">Something went wrong!</h1>
-            <p>Please try again later.</p>
+            <h1 className="alert-heading">Something went wrong :(</h1>
+            <h2>I'll working hard to resolve it</h2>
+            <h3>Please kindly report this error to Smile</h3>
             <hr />
           </header>
-          <div>{this.state.error?.message}</div>
+          <div className={b('info')}>Addition infomation : {this.state.error?.message}</div>
         </div>
       );
     }
