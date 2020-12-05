@@ -7,7 +7,7 @@
 @mixin nineslice($imageUrl, $top, $right, $bottom, $left) {
     border-image-source: url($imageUrl);
     border-image-slice: $top $right $bottom $left fill;
-    border-image-repeat: stretch; //should be fill but with current assets. stretch looks more reasonable
+    border-image-repeat: stretch; //should be repeat but with current assets. stretch looks more reasonable
     border-image-width: toPx($top) toPx($right) toPx($bottom) toPx($left);
 
     border-style: solid; // Edge fix
