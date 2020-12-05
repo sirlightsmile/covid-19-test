@@ -15,16 +15,18 @@ function CovidTable(props: CovidTableProps) {
     <div className="CovidTable">
       <h2>COVID-19 reported</h2>
       <table>
-        <tr>
-          {Array.from(cases.keys()).map((key) => (
-            <th key={'key' + key}>{MonthList[key]}</th>
-          ))}
-        </tr>
-        <tr>
-          {Array.from(cases.values()).map((value) => (
-            <td key={'value' + value}>{value}</td>
-          ))}
-        </tr>
+        <tbody>
+          <tr>
+            {Array.from(cases.keys()).map((key) => (
+              <th key={'key' + key}>{MonthList[key]}</th>
+            ))}
+          </tr>
+          <tr>
+            {Array.from(cases.values()).map((value) => (
+              <td key={'value' + value}>{value}</td>
+            ))}
+          </tr>
+        </tbody>
       </table>
     </div>
   ) : null;
