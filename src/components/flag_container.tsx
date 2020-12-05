@@ -14,7 +14,9 @@ function FlagContainer(props: FlagContainerProps) {
   return (
     <div className={b()}>
       <div className={b('bg')}>
-        <h2 className={b('header')}>Select country</h2>
+        <div className={b('header')}>
+          <h2>Select country</h2>
+        </div>
         <div className={b('container')}>
           {countryList.map((o) => {
             return <CountryFlag key={o.name} name={o.name} imgUrl={o.flag} />;
