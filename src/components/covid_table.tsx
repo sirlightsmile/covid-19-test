@@ -22,8 +22,8 @@ function CovidTable(props: CovidTableProps) {
             ))}
           </tr>
           <tr>
-            {Array.from(cases.values()).map((value) => (
-              <td key={'value' + value}>{value}</td>
+            {Array.from(cases.values()).map((value, i) => (
+              <td key={'value' + i}>{value}</td>
             ))}
           </tr>
         </tbody>
