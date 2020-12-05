@@ -8,18 +8,18 @@ interface ContentProps {
 }
 
 /**
- * Content layout provider
+ * Main Content layout provider
  */
 function ContentLayout(props: ContentProps) {
   return (
-    <div className={b()}>
+    <main className={b()}>
       <div className={b('bg')}>
         <div className={b('header')}>
           <h2>Select country</h2>
         </div>
         <div className={b('container')}>{props.children}</div>
       </div>
-    </div>
+    </main>
   );
 }
 
