@@ -31,17 +31,34 @@ function CountryPage(props: CountryPageProps) {
   return (
     <div className={b()}>
       <Header>
-        <h1>บริษัท การีนา ออนไลน์ (ประเทศไทย) จำกัด</h1>
-        <h2>89 อาคารเอไอเอ แคปปิตอล เซ็นเตอร์ ชั้น 24 ถนนรัชดาภิเษก แขวงดินแดง เขตดินแดง กทม. 10400</h2>
+        <h1>
+          บริษัท การีนา ออนไลน์
+          <br />
+          (ประเทศไทย) จำกัด
+        </h1>
+        <h2>
+          89 อาคารเอไอเอ แคปปิตอล เซ็นเตอร์ ชั้น 24 <br />
+          ถนนรัชดาภิเษก แขวงดินแดง เขตดินแดง กทม. 10400
+        </h2>
       </Header>
       <ContentLayout title="COVID-19 Data">
-        <h3>{`${name} (${alpha3Code})`}</h3>
-        <img src={flag} width={200 + 'px'} height={200 + 'px'} alt="country flag"></img>
-        <p>region : {region}</p>
-        <p>currencies : {currencies.join(Separator)}</p>
-        <p>timezones : {timezones.join(Separator)}</p>
-        <p>population : {population}</p>
-        <CovidTable countryISO2={countryData.alpha2Code} />
+        <div className={b('content')}>
+          <h1>{`${name} (${alpha3Code})`}</h1>
+          <img className={b('flag')} src={flag} width={200 + 'px'} height={200 + 'px'} alt="country flag"></img>
+          <p>
+            <strong>Region</strong> : {region}
+          </p>
+          <p>
+            <strong>Currencies</strong> : {currencies.join(Separator)}
+          </p>
+          <p>
+            <strong>Time Zones</strong> : {timezones.join(Separator)}
+          </p>
+          <p>
+            <strong>Population</strong> : {population}
+          </p>
+          <CovidTable countryISO2={countryData.alpha2Code} />
+        </div>
       </ContentLayout>
       <br />
       <footer>ข้อมูลด้านบนเป็นข้อมูลปัจจุบันจาก xxx</footer>
