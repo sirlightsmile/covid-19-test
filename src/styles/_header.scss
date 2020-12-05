@@ -31,5 +31,9 @@
     @include respond-to(mobile){
       font-size: calc(10px + 3vw);
     }
+
+    h2{
+      font-size: calc(10px + 2vw);
+    }
   }
 }
