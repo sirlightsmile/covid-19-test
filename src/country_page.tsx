@@ -45,23 +45,25 @@ function CountryPage(props: CountryPageProps) {
         <div className={b('content')}>
           <h1>{`${name} (${alpha3Code})`}</h1>
           <img className={b('flag')} src={flag} width={200 + 'px'} height={200 + 'px'} alt="country flag"></img>
-          <p>
-            <strong>Region</strong> : {region}
-          </p>
-          <p>
-            <strong>Currencies</strong> : {currencies.join(Separator)}
-          </p>
-          <p>
-            <strong>Time Zones</strong> : {timezones.join(Separator)}
-          </p>
-          <p>
-            <strong>Population</strong> : {population}
-          </p>
+          <div className={b('info')}>
+            <p>
+              <strong>Region</strong> : {region}
+            </p>
+            <p>
+              <strong>Currencies</strong> : {currencies.join(Separator)}
+            </p>
+            <p>
+              <strong>Time Zones</strong> : {timezones.join(Separator)}
+            </p>
+            <p>
+              <strong>Population</strong> : {population}
+            </p>
+          </div>
           <CovidTable countryISO2={countryData.alpha2Code} />
         </div>
       </ContentLayout>
       <br />
-      <footer>ข้อมูลด้านบนเป็นข้อมูลปัจจุบันจาก xxx</footer>
+      <footer>ข้อมูลจาก CORONAVIRUS COVID19 API</footer>
     </div>
   );
 }

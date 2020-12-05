@@ -11,7 +11,9 @@
         h1 {
             font-size: calc(16px + 2.5vw);
         }
-        p{
+
+        p, h2{
+            text-align: center;
             font-size: calc(16px + 1vw);
             margin: 5px;
         }
@@ -22,11 +24,29 @@
         align-items: center;
     }
 
+    &__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+
     &__flag {
         width: calc(90px + 40vw);
         max-width: 400px;
         height: auto;
         margin-top: 30px;
         margin-bottom: 30px;
+    }
+
+    footer {
+        font-size: calc(16px + 0.5vw);
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: rgb(151, 150, 150, 0.5);
+        color: white;
+        text-align: center;
     }
   }

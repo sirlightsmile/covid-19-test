@@ -12,8 +12,8 @@ function CovidTable(props: CovidTableProps) {
   const cases = covidData?.cases;
 
   return cases ? (
-    <div>
-      <h3>COVID-19 Table by month</h3>
+    <div className="CovidTable">
+      <h2>COVID-19 reported</h2>
       <table>
         <tr>
           {Array.from(cases.keys()).map((key) => (
