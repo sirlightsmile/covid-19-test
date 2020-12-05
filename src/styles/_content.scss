@@ -1,0 +1,55 @@
+@import 'mixin';
+@import 'variables';
+
+.Content {
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-height: 1200px;
+
+    &__bg{
+        background-color: black;
+        @include nineslice($baseImageUrl+"frame_large.png", 300, 430, 440, 500);
+        max-width: 900px;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    &__header{
+        @include nineslice($baseImageUrl+"frame_small.png", 20, 20, 20, 30);
+        margin-top: -35px;
+        color: white;
+        position: absolute;
+        font-size: calc(16px + 1vw);
+
+        min-height: 80px;
+        max-height: 100px;
+        min-width: 100px;
+        width: calc(10rem + 8vw);
+        height: fromPxToRef(100, 800);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h2 {
+            padding-bottom: 20px;
+        }
+    }
+
+    &__container {
+        max-height: 1100px;
+        overflow-y: scroll;
+        width: 90%;
+        margin-top: 10%;
+        margin-bottom: 50px;
+        padding: 0 30px 30px 30px;
+
+        @include respond-to(small-mobile){
+            margin-top: 15%;
+        }
+    }
+}

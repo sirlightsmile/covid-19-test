@@ -17,12 +17,8 @@
     @return $val + 0px;
   }
 
-  @function fromPxToRefWidth($width) {
-    @return ($width / 1000) * 100vw;
-  }
-
-  @function fromPxToRefHeight($height) {
-    @return ($height / 800) * 100vw;
+  @function fromPxToRef($width, $ref) {
+    @return ($width / $ref) * 100vw;
   }
 
 //responsive mixin from https://gist.github.com/davidthingsaker/30be328580d2a01f8a06

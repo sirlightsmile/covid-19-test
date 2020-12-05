@@ -3,6 +3,8 @@ import FlagContainer from './components/flag_container';
 import { useRecoilValue } from 'recoil';
 import { countryState } from './recoil/country_recoils';
 import bem from 'bem-ts';
+import Header from './components/header';
+import ContentLayout from './components/content_layout';
 
 const b = bem('App');
 
@@ -11,14 +13,12 @@ function App() {
 
   return (
     <div className={b()}>
-      <header className={b('header')}>
-        <div className={b('heroText')}>
-          <h1>Country COVID-19 Data</h1>
-        </div>
-      </header>
-      <main>
+      <Header>
+        <h1>Country COVID-19 Data</h1>
+      </Header>
+      <ContentLayout>
         <FlagContainer countryDataList={Array.from(countriesMap.values())} />
-      </main>
+      </ContentLayout>
     </div>
   );
 }
