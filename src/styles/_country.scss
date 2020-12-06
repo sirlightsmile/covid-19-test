@@ -12,12 +12,21 @@
 
         h1 {
             font-size: calc(16px + 2.5vw);
+
+            @include respond-to(small-mobile){
+                padding-top: 10%;
+                font-size: calc(12px + 1.5vw);
+            }
         }
 
         p, h2{
             text-align: left;
             font-size: calc(16px + 1vw);
             margin: 5px;
+
+            @include respond-to(small-mobile){
+                font-size: calc(12px + 1vw);
+            }
         }
 
         display: flex;
@@ -34,7 +43,7 @@
     }
 
     &__flag {
-        width: calc(90px + 40vw);
+        width: calc(90px + 30vw);
         max-width: 400px;
         height: auto;
         margin-top: 30px;
@@ -51,6 +60,7 @@
 
     &__button {
         font-size: calc(10px + 3vw);
+        text-align: center;
         font-weight: bold;
         height: calc(20px + 4vw);
         width: calc(20px + 4vw);

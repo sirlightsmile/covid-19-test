@@ -40,7 +40,7 @@
         align-items: center;
 
         h2 {
-            padding-bottom: 20px;
+            padding-bottom: 15px;
         }
     }
 
@@ -54,6 +54,7 @@
 
         @include respond-to(small-mobile){
             margin-top: 15%;
+            padding: 0 10px 20px 10px;
         }
     }
 }

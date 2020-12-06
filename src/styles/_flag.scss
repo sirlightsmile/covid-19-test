@@ -26,7 +26,7 @@
 
         @include respond-to(small-mobile){
             width: calc(300px + 5vw);
-            min-width: 100px;
+            min-width: 80px;
             flex: 0 1 80%;
         }
 

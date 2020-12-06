@@ -17,6 +17,10 @@
         text-align: center;
         padding: 8px;
         border: 1px solid #ddd;
+
+        @include respond-to(small-mobile){
+          font-size: calc(12px + 0.5vw);
+      }
       }
 
       tr:nth-child(odd){background-color: #363636}
