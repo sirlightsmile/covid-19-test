@@ -15,10 +15,6 @@
     @return $val + 0px;
   }
 
-  @function fromPxToRef($width, $ref) {
-    @return ($width / $ref) * 100vw;
-  }
-
 //responsive mixin from https://gist.github.com/davidthingsaker/30be328580d2a01f8a06
 $small-desktop: 960px;
 $large-desktop: 1200px;

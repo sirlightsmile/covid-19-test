@@ -25,8 +25,9 @@
         }
 
         @include respond-to(small-mobile){
-            width: calc(300px + 5vw);
-            min-width: 80px;
+            width: calc(100px + 3vw);
+            min-width: 60vw;
+
             flex: 0 1 80%;
         }
 

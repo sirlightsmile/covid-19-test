@@ -33,7 +33,7 @@
         max-height: 100px;
         min-width: 100px;
         width: calc(10rem + 8vw);
-        height: fromPxToRef(100, 800);
+        height: calc(2rem + 2vw);
 
         display: flex;
         justify-content: center;
