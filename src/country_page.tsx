@@ -40,7 +40,7 @@ function CountryPage(props: CountryPageProps) {
       </Header>
       <ContentLayout title="COVID-19 Data">
         <div className={b('content')}>
-          <h1>{`${name} (${alpha3Code})`}</h1>
+          <h1>{`${name} [${alpha3Code}]`}</h1>
           <img className={b('flag')} src={flag} width={200 + 'px'} height={200 + 'px'} alt="country flag"></img>
           <div className={b('info')}>
             <p>
@@ -60,7 +60,9 @@ function CountryPage(props: CountryPageProps) {
         </div>
       </ContentLayout>
       <br />
-      <footer>ข้อมูลจาก CORONAVIRUS COVID19 API</footer>
+      <footer>
+        ข้อมูลจาก <code>CORONAVIRUS COVID19 API</code>
+      </footer>
     </div>
   );
 }

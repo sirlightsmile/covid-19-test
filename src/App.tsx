@@ -14,7 +14,7 @@ function App() {
   return (
     <div className={b()}>
       <Header>
-        <h1>Country COVID-19 Data</h1>
+        <h1>Country's COVID-19 Data</h1>
       </Header>
       <ContentLayout title="Select Country">
         <FlagContainer countryDataList={Array.from(countriesMap.values())} />

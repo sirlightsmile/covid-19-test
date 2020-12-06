@@ -1,50 +1,27 @@
 @import 'mixin';
 @import 'variables';
 
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #EBC815, 0 0 20px #EBC815, 0 0 25px #EBC815, 0 0 30px;
+  }
+
+  to {
+    text-shadow: 0 0 15px #fff, 0 0 20px #fff, 0 0 25px #EBC815, 0 0 30px #EBC815, 0 0 35px #EBC815, 0 0 40px;
+  }
+}
+
 .App {
   background-color: black;
   color: transparent;
   width: 100vw;
-  height: 100%;
+  height: 100vh;
+
+  h1 {
+    color: #fff;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+  }
 }
-
-
-
-// .App {
-//   text-align: center;
-// }
-
-// .App-logo {
-//   height: 40vmin;
-//   pointer-events: none;
-// }
-
-// @media (prefers-reduced-motion: no-preference) {
-//   .App-logo {
-//     animation: App-logo-spin infinite 20s linear;
-//   }
-// }
-
-// .App-header {
-//   background-color: #282c34;
-//   min-height: 100vh;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   font-size: calc(10px + 2vmin);
-//   color: white;
-// }
-
-// .App-link {
-//   color: #61dafb;
-// }
-
-// @keyframes App-logo-spin {
-//   from {
-//     transform: rotate(0deg);
-//   }
-//   to {
-//     transform: rotate(360deg);
-//   }
-// }
