@@ -1,5 +1,6 @@
 import bem from 'bem-ts';
 import React from 'react';
+import { useState } from 'react';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
 import ContentLayout from './components/content_layout';
@@ -18,8 +19,8 @@ const Separator = ', ';
 interface CountryPageProps extends RouteComponentProps<MatchParams> {}
 
 function CountryPage(props: CountryPageProps) {
+  const [countryName, setCountryName] = useState(props.match.params.name || '');
   const countriesMap = useRecoilValue(countryState);
-  const countryName = props.match.params.name;
   const countryData = countriesMap.get(countryName);
 
   if (!countryData) {
@@ -27,6 +28,15 @@ function CountryPage(props: CountryPageProps) {
   }
 
   const { name, alpha3Code, region, currencies, timezones, population, flag } = countryData;
+
+  const onClickForward = (isForward: boolean) => {
+    const dataArray = Array.from(countriesMap.values());
+    const currentIndex = dataArray.indexOf(countryData);
+    const len = dataArray.length;
+    const targetIndex = isForward ? (currentIndex + 1) % len : (currentIndex + len - 1) % len;
+    const targetCountry = dataArray[targetIndex];
+    setCountryName(targetCountry.name);
+  };
 
   return (
     <div className={b()}>
@@ -41,7 +51,27 @@ function CountryPage(props: CountryPageProps) {
       <ContentLayout title="COVID-19 Data">
         <div className={b('content')}>
           <h1>{`${name} [${alpha3Code}]`}</h1>
-          <img className={b('flag')} src={flag} width={200 + 'px'} height={200 + 'px'} alt="country flag"></img>
+          <div className={b('flagContainer')}>
+            <button
+              type="button"
+              className={b('button')}
+              onClick={() => {
+                onClickForward(false);
+              }}
+            >
+              {'<'}
+            </button>
+            <img className={b('flag')} src={flag} alt="country flag"></img>
+            <button
+              type="button"
+              className={b('button')}
+              onClick={() => {
+                onClickForward(true);
+              }}
+            >
+              {'>'}
+            </button>
+          </div>
           <div className={b('info')}>
             <p>
               <strong>Region</strong> : {region}
