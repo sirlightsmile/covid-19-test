@@ -1,6 +1,3 @@
-//TODO:
-// - จำนวนการติดเชื้อในเดือน มกราคม-พฤษภาคม (รบกวนทำเป็นตาราง)
-
 import { MonthList } from '../enum/month';
 
 export interface ICovidData {
